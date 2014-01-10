@@ -1,0 +1,34 @@
+raspicam INDI Driver
+==================
+
+This package provides the INDI driver for the raspberry pi camera
+
+Requirtments
+============
+
++ libindi0 >= v0.6 (http://indi.sf.net)
+
+	You need to install both libindi0 and libindi0-devel to build this package.
+	
++ libcfitsio >= 3.0
+
+	libcfitsio3 is required to compile support for FITS.
+	
++ libpthread
+	libpthread is required
+
+Installation
+============
+
+	See INSTALL
+	
+How to Use
+==========
+
+	You can use the raspicam INDI Driver in any INDI-compatible client such as OpenPHD, gcx, KStars or Xephem. 
+	
+	To run the driver from the command line:
+	
+	$ indiserver indi_raspicam_ccd
+
+	You can then connect to the driver from any client, the default port is 7624.

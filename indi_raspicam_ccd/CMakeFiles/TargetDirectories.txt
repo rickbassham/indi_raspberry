@@ -1,0 +1,1 @@
+/home/rick/rpi/projects/indi_raspicam_ccd/CMakeFiles/indi_raspicam_ccd.dir

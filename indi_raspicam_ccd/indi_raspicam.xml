@@ -1,0 +1,6 @@
+<devGroup group="CCDs">
+        <device label="Raspberry Pi Camera">
+                <driver name="Raspberry Pi Camera">indi_raspicam_ccd</driver>
+                <version>1.0</version>
+        </device>
+</devGroup>
