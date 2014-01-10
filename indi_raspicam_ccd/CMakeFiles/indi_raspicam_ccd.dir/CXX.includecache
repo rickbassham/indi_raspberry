@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/rick/rpi/projects/indi_raspicam_ccd/raspicam_ccd.cpp
+/home/pi/indi_raspberry/indi_raspicam_ccd/raspicam_ccd.cpp
 memory
 -
 time.h
@@ -24,13 +24,13 @@ eventloop.h
 indilogger.h
 -
 raspicam_driver.h
-/home/rick/rpi/projects/indi_raspicam_ccd/raspicam_driver.h
+/home/pi/indi_raspberry/indi_raspicam_ccd/raspicam_driver.h
 raspicam_readimage.h
-/home/rick/rpi/projects/indi_raspicam_ccd/raspicam_readimage.h
+/home/pi/indi_raspberry/indi_raspicam_ccd/raspicam_readimage.h
 raspicam_ccd.h
-/home/rick/rpi/projects/indi_raspicam_ccd/raspicam_ccd.h
+/home/pi/indi_raspberry/indi_raspicam_ccd/raspicam_ccd.h
 
-/home/rick/rpi/projects/indi_raspicam_ccd/raspicam_ccd.h
+/home/pi/indi_raspberry/indi_raspicam_ccd/raspicam_ccd.h
 indiccd.h
 -
 iostream
@@ -42,9 +42,9 @@ string
 cstring
 -
 
-/home/rick/rpi/projects/indi_raspicam_ccd/raspicam_driver.h
+/home/pi/indi_raspberry/indi_raspicam_ccd/raspicam_driver.h
 
-/home/rick/rpi/projects/indi_raspicam_ccd/raspicam_readimage.h
+/home/pi/indi_raspberry/indi_raspicam_ccd/raspicam_readimage.h
 
 /usr/include/libindi/basedevice.h
 vector

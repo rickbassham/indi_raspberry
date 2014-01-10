@@ -39,6 +39,7 @@ set(indiraspicam_SRCS
 add_executable(indi_raspicam_ccd ${indiraspicam_SRCS})
 
 target_link_libraries(indi_raspicam_ccd ${INDI_DRIVER_LIBRARIES} ${CFITSIO_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT} ${JPEG_LIBRARIES} ${ZLIB_LIBRARIES})
+
 install(TARGETS indi_raspicam_ccd RUNTIME DESTINATION bin )
 
 install(FILES indi_raspicam.xml DESTINATION ${INDI_DATA_DIR})

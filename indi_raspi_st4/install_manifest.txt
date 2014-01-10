@@ -1,0 +1,1 @@
+/usr/local/bin/indi_raspi_st4

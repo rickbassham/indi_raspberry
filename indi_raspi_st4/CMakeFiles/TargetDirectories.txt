@@ -1,0 +1,1 @@
+/home/pi/indi_raspberry/indi_raspi_st4/CMakeFiles/indi_raspi_st4.dir

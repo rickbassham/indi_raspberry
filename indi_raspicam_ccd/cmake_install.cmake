@@ -1,4 +1,4 @@
-# Install script for directory: /home/rick/rpi/projects/indi_raspicam_ccd
+# Install script for directory: /home/pi/indi_raspberry/indi_raspicam_ccd
 
 # Set the install prefix
 IF(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,9 +39,11 @@ IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/indi_raspicam_ccd"
          RPATH "")
   ENDIF()
-  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/home/rick/rpi/projects/indi_raspicam_ccd/indi_raspicam_ccd")
+  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/home/pi/indi_raspberry/indi_raspicam_ccd/indi_raspicam_ccd")
   IF(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/indi_raspicam_ccd" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/indi_raspicam_ccd")
+    FILE(RPATH_REMOVE
+         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/indi_raspicam_ccd")
     IF(CMAKE_INSTALL_DO_STRIP)
       EXECUTE_PROCESS(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/indi_raspicam_ccd")
     ENDIF(CMAKE_INSTALL_DO_STRIP)
@@ -57,7 +59,7 @@ IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
   IF (CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   ENDIF (CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
-FILE(INSTALL DESTINATION "/usr/share/indi" TYPE FILE FILES "/home/rick/rpi/projects/indi_raspicam_ccd/indi_raspicam.xml")
+FILE(INSTALL DESTINATION "/usr/share/indi" TYPE FILE FILES "/home/pi/indi_raspberry/indi_raspicam_ccd/indi_raspicam.xml")
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
 
 IF(CMAKE_INSTALL_COMPONENT)
@@ -66,7 +68,7 @@ ELSE(CMAKE_INSTALL_COMPONENT)
   SET(CMAKE_INSTALL_MANIFEST "install_manifest.txt")
 ENDIF(CMAKE_INSTALL_COMPONENT)
 
-FILE(WRITE "/home/rick/rpi/projects/indi_raspicam_ccd/${CMAKE_INSTALL_MANIFEST}" "")
+FILE(WRITE "/home/pi/indi_raspberry/indi_raspicam_ccd/${CMAKE_INSTALL_MANIFEST}" "")
 FOREACH(file ${CMAKE_INSTALL_MANIFEST_FILES})
-  FILE(APPEND "/home/rick/rpi/projects/indi_raspicam_ccd/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
+  FILE(APPEND "/home/pi/indi_raspberry/indi_raspicam_ccd/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
 ENDFOREACH(file)

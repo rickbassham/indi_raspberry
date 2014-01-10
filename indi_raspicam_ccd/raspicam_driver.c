@@ -35,15 +35,25 @@
 
 #include "raspicam_driver.h"
 
+#define PI_COBBLER_PIN_18 = 1
+#define PI_COBBLER_PIN_23 = 4
+#define PI_COBBLER_PIN_24 = 5
+#define PI_COBBLER_PIN_25 = 6
+
+#define RA_PLUS_PIN   = PI_COBBLER_PIN_18
+#define DEC_PLUS_PIN  = PI_COBBLER_PIN_23
+#define DEC_MINUS_PIN = PI_COBBLER_PIN_24
+#define RA_MINUS_PIN  = PI_COBBLER_PIN_25
+
 struct _raspicam_driver {
-	int			exposure_cnt;
-	double			*exposure;
+    int      exposure_cnt;
+    double   *exposure;
 
-	int			width;
-	int			height;
+    int   width;
+    int   height;
 
-	int			iso;
-	int			format;
+    int   iso;
+    int   format;
 };
 
 static int debug = 1;
@@ -75,26 +85,26 @@ int raspicam_read_exposure(raspicam_driver *raspicam)
 
 const char **raspicam_get_formats(raspicam_driver *raspicam, int *cnt)
 {
-	const char ** sub_str = malloc(2 * sizeof(char*));
+    const char ** sub_str = malloc(2 * sizeof(char*));
 
-	sub_str[0] = "jpg";
-	sub_str[1] = "bmp";
+    sub_str[0] = "jpg";
+    sub_str[1] = "bmp";
 
-	*cnt = 2;
+    *cnt = 2;
 
-	return sub_str;
+    return sub_str;
 }
 
 const char **raspicam_get_iso(raspicam_driver *raspicam, int *cnt)
 {
-	const char ** sub_str = malloc(2 * sizeof(char*));
+    const char ** sub_str = malloc(2 * sizeof(char*));
 
-	sub_str[0] = "100";
-	sub_str[1] = "200";
+    sub_str[0] = "100";
+    sub_str[1] = "200";
 
-	*cnt = 2;
+    *cnt = 2;
 
-	return sub_str;
+    return sub_str;
 }
 
 void raspicam_set_iso(raspicam_driver *raspicam, int iso)

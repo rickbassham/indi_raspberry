@@ -304,9 +304,9 @@ bool RaspiCamCCD::ISNewSwitch(const char *dev, const char *name, ISState *states
 
 bool RaspiCamCCD::ISNewNumber(const char *dev, const char *name, double values[], char *names[], int n)
 {
-
   if (strcmp(dev, getDeviceName()) == 0)
   {
+      DEBUGF(INDI::Logger::DBG_SESSION, "%s", name);
       // TODO: Handle new Number
       return true;
   }
@@ -565,6 +565,7 @@ ISwitch *RaspiCamCCD::create_switch(const char *basestr, const char **options, i
 
 
 bool RaspiCamCCD::GuideNorth(float duration) {
+  DEBUGF(INDI::Logger::DBG_DEBUG, "GuideNorth: %f", duration);
   /**********************************************************
    *
    *
@@ -587,6 +588,7 @@ bool RaspiCamCCD::GuideNorth(float duration) {
 }
 
 bool RaspiCamCCD::GuideSouth(float duration) {
+  DEBUGF(INDI::Logger::DBG_DEBUG, "GuideSouth: %f", duration);
   /**********************************************************
    *
    *
@@ -610,6 +612,7 @@ bool RaspiCamCCD::GuideSouth(float duration) {
 }
 
 bool RaspiCamCCD::GuideEast(float duration) {
+  DEBUGF(INDI::Logger::DBG_DEBUG, "GuideEast: %f", duration);
   /**********************************************************
    *
    *
@@ -633,6 +636,7 @@ bool RaspiCamCCD::GuideEast(float duration) {
 }
 
 bool RaspiCamCCD::GuideWest(float duration) {
+  DEBUGF(INDI::Logger::DBG_DEBUG, "GuideWest: %f", duration);
   /**********************************************************
    *
    *

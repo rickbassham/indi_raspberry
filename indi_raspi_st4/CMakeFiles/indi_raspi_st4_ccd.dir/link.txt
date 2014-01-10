@@ -1,0 +1,1 @@
+/usr/bin/c++   -Wall    CMakeFiles/indi_raspi_st4_ccd.dir/rpist4.o CMakeFiles/indi_raspi_st4_ccd.dir/rpist4driver.o  -o indi_raspi_st4_ccd -rdynamic /usr/local/lib/libindidriver.so -Wl,-rpath,/usr/local/lib: 

@@ -20,4 +20,5 @@ extern void raspicam_free_buffer(raspicam_driver *raspicam);
 extern const char *raspicam_get_file_extension(raspicam_driver *raspicam);
 extern void raspicam_show_options(raspicam_driver *raspicam);
 extern int raspicam_get_dimensions(raspicam_driver *raspicam, int *width, int *height);
+
 #endif

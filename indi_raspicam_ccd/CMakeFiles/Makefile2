@@ -47,10 +47,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/rick/rpi/projects/indi_raspicam_ccd
+CMAKE_SOURCE_DIR = /home/pi/indi_raspberry/indi_raspicam_ccd
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/rick/rpi/projects/indi_raspicam_ccd
+CMAKE_BINARY_DIR = /home/pi/indi_raspberry/indi_raspicam_ccd
 
 #=============================================================================
 # Target rules for target CMakeFiles/indi_raspicam_ccd.dir
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /home/rick/rpi/projects/indi_raspicam_ccd
 CMakeFiles/indi_raspicam_ccd.dir/all:
 	$(MAKE) -f CMakeFiles/indi_raspicam_ccd.dir/build.make CMakeFiles/indi_raspicam_ccd.dir/depend
 	$(MAKE) -f CMakeFiles/indi_raspicam_ccd.dir/build.make CMakeFiles/indi_raspicam_ccd.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/rick/rpi/projects/indi_raspicam_ccd/CMakeFiles  1 2 3
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/pi/indi_raspberry/indi_raspicam_ccd/CMakeFiles  1 2 3
 	@echo "Built target indi_raspicam_ccd"
 .PHONY : CMakeFiles/indi_raspicam_ccd.dir/all
 
@@ -69,9 +69,9 @@ all: CMakeFiles/indi_raspicam_ccd.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/indi_raspicam_ccd.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/rick/rpi/projects/indi_raspicam_ccd/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/indi_raspberry/indi_raspicam_ccd/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/indi_raspicam_ccd.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/rick/rpi/projects/indi_raspicam_ccd/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/indi_raspberry/indi_raspicam_ccd/CMakeFiles 0
 .PHONY : CMakeFiles/indi_raspicam_ccd.dir/rule
 
 # Convenience name for target.

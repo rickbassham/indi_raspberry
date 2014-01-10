@@ -104,3 +104,215 @@ make[1]: Leaving directory `/home/rick/rpi/projects/indi_raspicam_ccd/CMakeFiles
 make: *** [cmTryCompileExec3884503924/fast] Error 2
 
 
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/pi/indi_raspberry/indi_raspicam_ccd/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec687172665/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec687172665.dir/build.make CMakeFiles/cmTryCompileExec687172665.dir/build
+make[1]: Entering directory `/home/pi/indi_raspberry/indi_raspicam_ccd/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/pi/indi_raspberry/indi_raspicam_ccd/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec687172665.dir/CheckSymbolExists.c.o
+/usr/bin/gcc   -Wall     -o CMakeFiles/cmTryCompileExec687172665.dir/CheckSymbolExists.c.o   -c /home/pi/indi_raspberry/indi_raspicam_ccd/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTryCompileExec687172665
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec687172665.dir/link.txt --verbose=1
+/usr/bin/gcc   -Wall      CMakeFiles/cmTryCompileExec687172665.dir/CheckSymbolExists.c.o  -o cmTryCompileExec687172665 -rdynamic 
+CMakeFiles/cmTryCompileExec687172665.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0x38): undefined reference to `pthread_create'
+collect2: ld returned 1 exit status
+make[1]: Leaving directory `/home/pi/indi_raspberry/indi_raspicam_ccd/CMakeFiles/CMakeTmp'
+make[1]: *** [cmTryCompileExec687172665] Error 1
+make: *** [cmTryCompileExec687172665/fast] Error 2
+
+File /home/pi/indi_raspberry/indi_raspicam_ccd/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/pi/indi_raspberry/indi_raspicam_ccd/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec2610306784/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2610306784.dir/build.make CMakeFiles/cmTryCompileExec2610306784.dir/build
+make[1]: Entering directory `/home/pi/indi_raspberry/indi_raspicam_ccd/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/pi/indi_raspberry/indi_raspicam_ccd/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2610306784.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -Wall  -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTryCompileExec2610306784.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec2610306784
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2610306784.dir/link.txt --verbose=1
+/usr/bin/gcc   -Wall  -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTryCompileExec2610306784.dir/CheckFunctionExists.c.o  -o cmTryCompileExec2610306784 -rdynamic -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: ld returned 1 exit status
+make[1]: Leaving directory `/home/pi/indi_raspberry/indi_raspicam_ccd/CMakeFiles/CMakeTmp'
+make[1]: *** [cmTryCompileExec2610306784] Error 1
+make: *** [cmTryCompileExec2610306784/fast] Error 2
+
+
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/pi/indi_raspberry/indi_raspicam_ccd/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec760074487/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec760074487.dir/build.make CMakeFiles/cmTryCompileExec760074487.dir/build
+make[1]: Entering directory `/home/pi/indi_raspberry/indi_raspicam_ccd/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/pi/indi_raspberry/indi_raspicam_ccd/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec760074487.dir/CheckSymbolExists.c.o
+/usr/bin/gcc   -Wall     -o CMakeFiles/cmTryCompileExec760074487.dir/CheckSymbolExists.c.o   -c /home/pi/indi_raspberry/indi_raspicam_ccd/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTryCompileExec760074487
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec760074487.dir/link.txt --verbose=1
+/usr/bin/gcc   -Wall      CMakeFiles/cmTryCompileExec760074487.dir/CheckSymbolExists.c.o  -o cmTryCompileExec760074487 -rdynamic 
+CMakeFiles/cmTryCompileExec760074487.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0x38): undefined reference to `pthread_create'
+collect2: ld returned 1 exit status
+make[1]: *** [cmTryCompileExec760074487] Error 1
+make[1]: Leaving directory `/home/pi/indi_raspberry/indi_raspicam_ccd/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec760074487/fast] Error 2
+
+File /home/pi/indi_raspberry/indi_raspicam_ccd/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/pi/indi_raspberry/indi_raspicam_ccd/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec3886630127/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3886630127.dir/build.make CMakeFiles/cmTryCompileExec3886630127.dir/build
+make[1]: Entering directory `/home/pi/indi_raspberry/indi_raspicam_ccd/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/pi/indi_raspberry/indi_raspicam_ccd/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3886630127.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -Wall  -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTryCompileExec3886630127.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec3886630127
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3886630127.dir/link.txt --verbose=1
+/usr/bin/gcc   -Wall  -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTryCompileExec3886630127.dir/CheckFunctionExists.c.o  -o cmTryCompileExec3886630127 -rdynamic -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: ld returned 1 exit status
+make[1]: Leaving directory `/home/pi/indi_raspberry/indi_raspicam_ccd/CMakeFiles/CMakeTmp'
+make[1]: *** [cmTryCompileExec3886630127] Error 1
+make: *** [cmTryCompileExec3886630127/fast] Error 2
+
+
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/pi/indi_raspberry/indi_raspicam_ccd/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec3144221548/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3144221548.dir/build.make CMakeFiles/cmTryCompileExec3144221548.dir/build
+make[1]: Entering directory `/home/pi/indi_raspberry/indi_raspicam_ccd/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/pi/indi_raspberry/indi_raspicam_ccd/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3144221548.dir/CheckSymbolExists.c.o
+/usr/bin/gcc   -Wall     -o CMakeFiles/cmTryCompileExec3144221548.dir/CheckSymbolExists.c.o   -c /home/pi/indi_raspberry/indi_raspicam_ccd/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTryCompileExec3144221548
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3144221548.dir/link.txt --verbose=1
+/usr/bin/gcc   -Wall      CMakeFiles/cmTryCompileExec3144221548.dir/CheckSymbolExists.c.o  -o cmTryCompileExec3144221548 -rdynamic 
+CMakeFiles/cmTryCompileExec3144221548.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0x38): undefined reference to `pthread_create'
+collect2: ld returned 1 exit status
+make[1]: Leaving directory `/home/pi/indi_raspberry/indi_raspicam_ccd/CMakeFiles/CMakeTmp'
+make[1]: *** [cmTryCompileExec3144221548] Error 1
+make: *** [cmTryCompileExec3144221548/fast] Error 2
+
+File /home/pi/indi_raspberry/indi_raspicam_ccd/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/pi/indi_raspberry/indi_raspicam_ccd/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec3272216072/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3272216072.dir/build.make CMakeFiles/cmTryCompileExec3272216072.dir/build
+make[1]: Entering directory `/home/pi/indi_raspberry/indi_raspicam_ccd/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/pi/indi_raspberry/indi_raspicam_ccd/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3272216072.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -Wall  -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTryCompileExec3272216072.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec3272216072
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3272216072.dir/link.txt --verbose=1
+/usr/bin/gcc   -Wall  -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTryCompileExec3272216072.dir/CheckFunctionExists.c.o  -o cmTryCompileExec3272216072 -rdynamic -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: ld returned 1 exit status
+make[1]: *** [cmTryCompileExec3272216072] Error 1
+make[1]: Leaving directory `/home/pi/indi_raspberry/indi_raspicam_ccd/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec3272216072/fast] Error 2
+
+
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/pi/indi_raspberry/indi_raspicam_ccd/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec333452593/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec333452593.dir/build.make CMakeFiles/cmTryCompileExec333452593.dir/build
+make[1]: Entering directory `/home/pi/indi_raspberry/indi_raspicam_ccd/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/pi/indi_raspberry/indi_raspicam_ccd/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec333452593.dir/CheckSymbolExists.c.o
+/usr/bin/gcc   -Wall     -o CMakeFiles/cmTryCompileExec333452593.dir/CheckSymbolExists.c.o   -c /home/pi/indi_raspberry/indi_raspicam_ccd/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTryCompileExec333452593
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec333452593.dir/link.txt --verbose=1
+/usr/bin/gcc   -Wall      CMakeFiles/cmTryCompileExec333452593.dir/CheckSymbolExists.c.o  -o cmTryCompileExec333452593 -rdynamic 
+CMakeFiles/cmTryCompileExec333452593.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0x38): undefined reference to `pthread_create'
+collect2: ld returned 1 exit status
+make[1]: Leaving directory `/home/pi/indi_raspberry/indi_raspicam_ccd/CMakeFiles/CMakeTmp'
+make[1]: *** [cmTryCompileExec333452593] Error 1
+make: *** [cmTryCompileExec333452593/fast] Error 2
+
+File /home/pi/indi_raspberry/indi_raspicam_ccd/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/pi/indi_raspberry/indi_raspicam_ccd/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec2357687720/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2357687720.dir/build.make CMakeFiles/cmTryCompileExec2357687720.dir/build
+make[1]: Entering directory `/home/pi/indi_raspberry/indi_raspicam_ccd/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/pi/indi_raspberry/indi_raspicam_ccd/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2357687720.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -Wall  -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTryCompileExec2357687720.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec2357687720
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2357687720.dir/link.txt --verbose=1
+/usr/bin/gcc   -Wall  -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTryCompileExec2357687720.dir/CheckFunctionExists.c.o  -o cmTryCompileExec2357687720 -rdynamic -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: ld returned 1 exit status
+make[1]: Leaving directory `/home/pi/indi_raspberry/indi_raspicam_ccd/CMakeFiles/CMakeTmp'
+make[1]: *** [cmTryCompileExec2357687720] Error 1
+make: *** [cmTryCompileExec2357687720/fast] Error 2
+
+
