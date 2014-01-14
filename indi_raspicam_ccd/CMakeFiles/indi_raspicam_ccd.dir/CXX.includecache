@@ -6,45 +6,23 @@
 
 #IncludeRegexTransform: 
 
-/home/pi/indi_raspberry/indi_raspicam_ccd/raspicam_ccd.cpp
+/home/rick/rpi/projects/indi_raspberry/indi_raspicam_ccd/raspicam_ccd.cpp
+sys/time.h
+-
 memory
 -
-time.h
+signal.h
 -
-math.h
+raspicam_ccd.h
+/home/rick/rpi/projects/indi_raspberry/indi_raspicam_ccd/raspicam_ccd.h
+
+/home/rick/rpi/projects/indi_raspberry/indi_raspicam_ccd/raspicam_ccd.h
+sys/types.h
 -
 unistd.h
 -
-sys/time.h
--
-indidevapi.h
--
-eventloop.h
--
-indilogger.h
--
-raspicam_driver.h
-/home/pi/indi_raspberry/indi_raspicam_ccd/raspicam_driver.h
-raspicam_readimage.h
-/home/pi/indi_raspberry/indi_raspicam_ccd/raspicam_readimage.h
-raspicam_ccd.h
-/home/pi/indi_raspberry/indi_raspicam_ccd/raspicam_ccd.h
-
-/home/pi/indi_raspberry/indi_raspicam_ccd/raspicam_ccd.h
 indiccd.h
 -
-iostream
--
-map
--
-string
--
-cstring
--
-
-/home/pi/indi_raspberry/indi_raspicam_ccd/raspicam_driver.h
-
-/home/pi/indi_raspberry/indi_raspicam_ccd/raspicam_readimage.h
 
 /usr/include/libindi/basedevice.h
 vector
@@ -73,8 +51,6 @@ indilogger.h
 /usr/include/libindi/indilogger.h
 memory.h
 -
-
-/usr/include/libindi/eventloop.h
 
 /usr/include/libindi/indiapi.h
 

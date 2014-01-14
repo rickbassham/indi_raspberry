@@ -1,113 +1,94 @@
-/*
-    Driver type: RaspiCam Camera INDI Driver
+#ifndef RASPICAM_CCD_H
+#define RASPICAM_CCD_H
 
-    Copyright (C) 2009 Geoffrey Hausheer
-    Copyright (C) 2013 Jasem Mutlaq (mutlaqja AT ikarustech DOT com)
-
-    This library is free software; you can redistribute it and/or modify
-    it under the terms of the GNU Lesser General Public License as published
-    by the Free Software Foundation; either version 2.1 of the License, or
-    (at your option) any later version.
-
-    This library is distributed in the hope that it will be useful, but
-    WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
-    or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public
-    License for more details.
-
-    You should have received a copy of the GNU Lesser General Public License
-    along with this library; if not, write to the Free Software Foundation,
-    Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301 USA
-
-*/
-
-#ifndef GPHOTO_CCD_H
-#define GPHOTO_CCD_H
-
+#include <sys/types.h>
+#include <unistd.h>
 #include <indiccd.h>
-#include <iostream>
-#include <map>
-#include <string>
-#include <cstring>
 
-#define	MAXEXPERR	10		/* max err in exp time we allow, secs */
-#define	OPENDT		5		/* open retry delay, secs */
+struct popen2 {
+    pid_t child_pid;
+    int   from_child, to_child;
+};
 
-using namespace std;
+int popen2(const char *cmdline, struct popen2 *childinfo) {
+    pid_t p;
+    int pipe_stdin[2], pipe_stdout[2];
 
-enum { ON_S, OFF_S };
+    if(pipe(pipe_stdin)) return -1;
+    if(pipe(pipe_stdout)) return -1;
 
-class RaspiCamCCD: public INDI::CCD
+    printf("pipe_stdin[0] = %d, pipe_stdin[1] = %d\n", pipe_stdin[0], pipe_stdin[1]);
+    printf("pipe_stdout[0] = %d, pipe_stdout[1] = %d\n", pipe_stdout[0], pipe_stdout[1]);
+
+    p = fork();
+    if(p < 0) return p; /* Fork failed */
+    if(p == 0) { /* child */
+        close(pipe_stdin[1]);
+        dup2(pipe_stdin[0], 0);
+        close(pipe_stdout[0]);
+        dup2(pipe_stdout[1], 1);
+        execl(cmdline, "", NULL);
+        perror("execl"); exit(99);
+    }
+    childinfo->child_pid = p;
+    childinfo->to_child = pipe_stdin[1];
+    childinfo->from_child = pipe_stdout[0];
+    return 0;
+}
+
+typedef struct
+{
+    int filesz; /* size of BMP file */
+    short r1;   /* reserved - must be 0 */
+    short r2;   /* reserved - must be 0 */
+    int offset; /* offset to image data */
+    int size;   /* size of remaining header (must be 40) */
+    int width;  /* image width in pixels */
+    int height; /* image height in pixels */
+    short planes;   /* must be 1 */
+    short bitcount; /* bits per pixel - 1,2,4,8,16,24,32 */
+    int compression;/* must be 0 for uncompressed image */
+    int sizeimage;  /* image size - may be 0 for uncompressed image */
+    int xppm;   /* X pixels per metre (ignore) */
+    int yppm;   /* Y pixels per metre (ignore) */
+    int cmapentries;/* Number of colourmap entries */
+    int clrimportant; /* number of important colours */
+} bmp_header;
+
+class RaspicamCCD : public INDI::CCD
 {
 public:
-    RaspiCamCCD();
-    RaspiCamCCD(const char* device_name);
-    virtual	~RaspiCamCCD();
+    RaspicamCCD();
 
-    const char *getDefaultName();
-
-    bool initProperties();
     void ISGetProperties(const char *dev);
-    bool updateProperties();
-
-    bool Connect();
-    bool Disconnect();
-
-    bool StartExposure(float duration);
-
-    virtual bool ISNewNumber(const char *dev, const char *name, double values[], char *names[], int n);
-    virtual bool ISNewSwitch(const char *dev, const char *name, ISState *states, char *names[], int n);
-    virtual bool ISNewText (const char *dev, const char *name, char *texts[], char *names[], int n);
-
-    // Guide Port
-    virtual bool GuideNorth(float);
-    virtual bool GuideSouth(float);
-    virtual bool GuideEast(float);
-    virtual bool GuideWest(float);
-
-    static void ExposureUpdate(void *vp);
-    void ExposureUpdate();
 
 protected:
+    // General device functions
+    bool Connect();
+    bool Disconnect();
+    const char *getDefaultName();
+    bool initProperties();
+    bool updateProperties();
 
+    // CCD specific functions
+    bool StartExposure(float duration);
     void TimerHit();
 
 private:
-    ISwitch *create_switch(const char *basestr, const char **options, int max_opts, int setidx);
-
+    // Utility functions
     float CalcTimeLeft();
-    bool grabImage();
+    void setupParams();
+    void grabImage();
 
-    char name[MAXINDINAME];
+    // Are we exposing?
+    bool InExposure;
+    // Struct to keep timing
     struct timeval ExpStart;
+
     float ExposureRequest;
-
-    raspicam_driver *raspicamdrv;
-
-    int expTID;			/* exposure callback timer id, if any */
-    int optTID;			/* callback for exposure timer id */
-
-    char *on_off[2];
     int timerID;
 
-    ISwitch mConnectS[2];
-    ISwitchVectorProperty mConnectSP;
-
-    INumber mExposureN[1];
-    INumberVectorProperty mExposureNP;
-
-    ISwitch *mIsoS;
-    ISwitchVectorProperty mIsoSP;
-    ISwitch *mFormatS;
-    ISwitchVectorProperty mFormatSP;
-
-    ISwitch transferFormatS[2];
-    ISwitchVectorProperty transferFormatSP;
-
-    friend void ::ISGetProperties(const char *dev);
-    friend void ::ISNewSwitch(const char *dev, const char *name, ISState *states, char *names[], int num);
-    friend void ::ISNewText(const char *dev, const char *name, char *texts[], char *names[], int num);
-    friend void ::ISNewNumber(const char *dev, const char *name, double values[], char *names[], int num);
-    friend void ::ISNewBLOB(const char *dev, const char *name, int sizes[], int blobsizes[], char *blobs[], char *formats[], char *names[], int n);
+    struct popen2 child;
 };
 
-#endif
+#endif // RASPICAM_CCD_H

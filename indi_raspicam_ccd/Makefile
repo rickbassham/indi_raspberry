@@ -39,10 +39,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/pi/indi_raspberry/indi_raspicam_ccd
+CMAKE_SOURCE_DIR = /home/rick/rpi/projects/indi_raspberry/indi_raspicam_ccd
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/pi/indi_raspberry/indi_raspicam_ccd
+CMAKE_BINARY_DIR = /home/rick/rpi/projects/indi_raspberry/indi_raspicam_ccd
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -110,9 +110,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/indi_raspberry/indi_raspicam_ccd/CMakeFiles /home/pi/indi_raspberry/indi_raspicam_ccd/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rick/rpi/projects/indi_raspberry/indi_raspicam_ccd/CMakeFiles /home/rick/rpi/projects/indi_raspberry/indi_raspicam_ccd/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/indi_raspberry/indi_raspicam_ccd/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rick/rpi/projects/indi_raspberry/indi_raspicam_ccd/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -167,36 +167,6 @@ raspicam_ccd.s:
 	$(MAKE) -f CMakeFiles/indi_raspicam_ccd.dir/build.make CMakeFiles/indi_raspicam_ccd.dir/raspicam_ccd.s
 .PHONY : raspicam_ccd.s
 
-# target to build an object file
-raspicam_driver.o:
-	$(MAKE) -f CMakeFiles/indi_raspicam_ccd.dir/build.make CMakeFiles/indi_raspicam_ccd.dir/raspicam_driver.o
-.PHONY : raspicam_driver.o
-
-# target to preprocess a source file
-raspicam_driver.i:
-	$(MAKE) -f CMakeFiles/indi_raspicam_ccd.dir/build.make CMakeFiles/indi_raspicam_ccd.dir/raspicam_driver.i
-.PHONY : raspicam_driver.i
-
-# target to generate assembly for a file
-raspicam_driver.s:
-	$(MAKE) -f CMakeFiles/indi_raspicam_ccd.dir/build.make CMakeFiles/indi_raspicam_ccd.dir/raspicam_driver.s
-.PHONY : raspicam_driver.s
-
-# target to build an object file
-raspicam_readimage.o:
-	$(MAKE) -f CMakeFiles/indi_raspicam_ccd.dir/build.make CMakeFiles/indi_raspicam_ccd.dir/raspicam_readimage.o
-.PHONY : raspicam_readimage.o
-
-# target to preprocess a source file
-raspicam_readimage.i:
-	$(MAKE) -f CMakeFiles/indi_raspicam_ccd.dir/build.make CMakeFiles/indi_raspicam_ccd.dir/raspicam_readimage.i
-.PHONY : raspicam_readimage.i
-
-# target to generate assembly for a file
-raspicam_readimage.s:
-	$(MAKE) -f CMakeFiles/indi_raspicam_ccd.dir/build.make CMakeFiles/indi_raspicam_ccd.dir/raspicam_readimage.s
-.PHONY : raspicam_readimage.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -213,12 +183,6 @@ help:
 	@echo "... raspicam_ccd.o"
 	@echo "... raspicam_ccd.i"
 	@echo "... raspicam_ccd.s"
-	@echo "... raspicam_driver.o"
-	@echo "... raspicam_driver.i"
-	@echo "... raspicam_driver.s"
-	@echo "... raspicam_readimage.o"
-	@echo "... raspicam_readimage.i"
-	@echo "... raspicam_readimage.s"
 .PHONY : help
 
 

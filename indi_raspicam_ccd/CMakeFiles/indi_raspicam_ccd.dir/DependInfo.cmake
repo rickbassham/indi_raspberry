@@ -1,16 +1,10 @@
 # The set of languages for which implicit dependencies are needed:
 SET(CMAKE_DEPENDS_LANGUAGES
-  "C"
   "CXX"
   )
 # The set of files for implicit dependencies of each language:
-SET(CMAKE_DEPENDS_CHECK_C
-  "/home/pi/indi_raspberry/indi_raspicam_ccd/raspicam_driver.c" "/home/pi/indi_raspberry/indi_raspicam_ccd/CMakeFiles/indi_raspicam_ccd.dir/raspicam_driver.o"
-  "/home/pi/indi_raspberry/indi_raspicam_ccd/raspicam_readimage.c" "/home/pi/indi_raspberry/indi_raspicam_ccd/CMakeFiles/indi_raspicam_ccd.dir/raspicam_readimage.o"
-  )
-SET(CMAKE_C_COMPILER_ID "GNU")
 SET(CMAKE_DEPENDS_CHECK_CXX
-  "/home/pi/indi_raspberry/indi_raspicam_ccd/raspicam_ccd.cpp" "/home/pi/indi_raspberry/indi_raspicam_ccd/CMakeFiles/indi_raspicam_ccd.dir/raspicam_ccd.o"
+  "/home/rick/rpi/projects/indi_raspberry/indi_raspicam_ccd/raspicam_ccd.cpp" "/home/rick/rpi/projects/indi_raspberry/indi_raspicam_ccd/CMakeFiles/indi_raspicam_ccd.dir/raspicam_ccd.o"
   )
 SET(CMAKE_CXX_COMPILER_ID "GNU")
 

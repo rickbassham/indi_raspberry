@@ -1,2 +1,2 @@
-/usr/bin/indi_raspicam_ccd
+/usr/local/bin/indi_raspicam_ccd
 /usr/share/indi/indi_raspicam.xml

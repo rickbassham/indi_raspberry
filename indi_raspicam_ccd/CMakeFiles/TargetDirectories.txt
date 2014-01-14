@@ -1,1 +1,1 @@
-/home/pi/indi_raspberry/indi_raspicam_ccd/CMakeFiles/indi_raspicam_ccd.dir
+/home/rick/rpi/projects/indi_raspberry/indi_raspicam_ccd/CMakeFiles/indi_raspicam_ccd.dir

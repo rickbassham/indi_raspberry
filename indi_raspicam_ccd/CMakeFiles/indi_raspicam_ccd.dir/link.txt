@@ -1,1 +1,1 @@
-/usr/bin/c++   -Wall    CMakeFiles/indi_raspicam_ccd.dir/raspicam_ccd.o CMakeFiles/indi_raspicam_ccd.dir/raspicam_driver.o CMakeFiles/indi_raspicam_ccd.dir/raspicam_readimage.o  -o indi_raspicam_ccd -rdynamic -L/usr/local/lib /usr/local/lib/libindidriver.so -lcfitsio -lpthread -ljpeg -lz -Wl,-rpath,/usr/local/lib: 
+/usr/bin/c++   -Wall    CMakeFiles/indi_raspicam_ccd.dir/raspicam_ccd.o  -o indi_raspicam_ccd -rdynamic -lindidriver -lcfitsio -lpthread -ljpeg -lz 
