@@ -69,6 +69,9 @@ protected:
 
 private:
 
+    INumberVectorProperty *GPIOPinsNP;
+    INumber GPIOPinsN[4];
+
     float CalcWEPulseTimeLeft();
     float CalcNSPulseTimeLeft();
 

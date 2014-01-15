@@ -5,6 +5,9 @@
 #include <unistd.h>
 #include <indiccd.h>
 
+#include <jpeglib.h>
+#include <fitsio.h>
+
 struct popen2 {
     pid_t child_pid;
     int   from_child, to_child;
@@ -27,7 +30,7 @@ int popen2(const char *cmdline, struct popen2 *childinfo) {
         dup2(pipe_stdin[0], 0);
         close(pipe_stdout[0]);
         dup2(pipe_stdout[1], 1);
-        execl(cmdline, "", NULL);
+        execl("/bin/sh", "sh", "-c", cmdline, "", NULL);
         perror("execl"); exit(99);
     }
     childinfo->child_pid = p;
@@ -89,6 +92,8 @@ private:
     int timerID;
 
     struct popen2 child;
+
+    int read_jpeg(const char *filename, char **memptr, size_t *memsize, int *naxis, int *w, int *h );
 };
 
 #endif // RASPICAM_CCD_H

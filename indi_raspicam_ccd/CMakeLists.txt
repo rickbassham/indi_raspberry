@@ -14,6 +14,15 @@ find_package(ZLIB REQUIRED)
 find_package(Threads REQUIRED)
 find_package(JPEG REQUIRED)
 
+#find_program(RASPISTILL_EXECUTABLE NAMES raspistill
+#    PATHS
+#    /usr/bin
+#    /usr/local/bin)
+
+#if (NOT RASPISTILL_EXECUTABLE)
+#    message(FATAL_ERROR "raspistill not found. Please install raspistill and try again.")
+#endif (NOT RASPISTILL_EXECUTABLE)
+
 include_directories( ${CMAKE_CURRENT_BINARY_DIR})
 include_directories( ${CMAKE_CURRENT_SOURCE_DIR})
 include_directories( ${INDI_INCLUDE_DIR})

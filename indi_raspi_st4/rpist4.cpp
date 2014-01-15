@@ -19,6 +19,7 @@ Boston, MA 02110-1301, USA.
 The full GNU General Public License is included in this distribution in the
 file called LICENSE.
 *******************************************************************************/
+
 #include "rpist4.h"
 #include "rpist4driver.h"
 #include <memory>
@@ -118,6 +119,12 @@ bool RPIST4::initProperties()
 {
     initGuiderProperties(getDeviceName(), MAIN_CONTROL_TAB);
 
+    IUFillNumber(&GPIOPinsN[0],"RA_PLUS","RA+ ","%d",0,8,1,1);
+    IUFillNumber(&GPIOPinsN[1],"RA_MINUS","RA-","%d",0,8,1,6);
+    IUFillNumber(&GPIOPinsN[2],"DEC_PLUS","DEC+","%d",0,8,1,4);
+    IUFillNumber(&GPIOPinsN[3],"DEC_MINUS","DEC-","%d",0,8,1,5);
+    IUFillNumberVector(GPIOPinsNP,GPIOPinsN,4,getDeviceName(),"GPIO_PINS","GPIO Pins","GPIO Setup",IP_RW,60,IPS_IDLE);
+
     addDebugControl();
 
     return INDI::DefaultDevice::initProperties();
@@ -126,6 +133,8 @@ bool RPIST4::initProperties()
 bool RPIST4::updateProperties()
 {
     INDI::DefaultDevice::updateProperties();
+
+    defineNumber(GPIOPinsNP);
 
     if (isConnected())
     {
@@ -153,6 +162,18 @@ bool RPIST4::ISNewNumber (const char *dev, const char *name, double values[], ch
         if (!strcmp(name,GuideNSNP.name) || !strcmp(name,GuideWENP.name))
         {
             processGuiderProperties(name, values, names, n);
+            return true;
+        }
+
+        if (strcmp(name,"GPIO_PINS")==0)
+        {
+            GPIOPinsNP->s=IPS_OK;
+            IUUpdateNumber(GPIOPinsNP,values,names,n);
+
+            delete driver;
+            driver = new RPIST4Driver(GPIOPinsN[0].value, GPIOPinsN[1].value, GPIOPinsN[2].value, GPIOPinsN[3].value);
+
+            IDSetNumber(GPIOPinsNP, NULL);
             return true;
         }
     }

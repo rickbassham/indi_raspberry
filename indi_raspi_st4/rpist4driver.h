@@ -45,6 +45,7 @@ class RPIST4Driver
 {
 public:
     RPIST4Driver();
+    RPIST4Driver(int raPlusPin, int raMinusPin, int decPlusPin, int decMinusPin);
     virtual ~RPIST4Driver();
 
     bool startPulse(int direction);
@@ -55,6 +56,10 @@ public:
 private:
     bool debug;
 
+    int raPlus;
+    int raMinus;
+    int decPlus;
+    int decMinus;
 };
 
 #endif // RPIST4Driver_H

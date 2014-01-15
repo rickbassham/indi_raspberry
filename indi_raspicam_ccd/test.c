@@ -8,7 +8,7 @@ void my_handler(int signum)
 {
     if (signum == SIGUSR1)
     {
-        FILE* f = fopen("test.bmp", "rb");
+        FILE* f = fopen("/home/rick/rpi/projects/indi_raspberry/indi_raspicam_ccd/test.jpg", "rb");
 
         if (f)
         {
@@ -29,6 +29,7 @@ void my_handler(int signum)
 int main( int argc, const char* argv[] )
 {
     signal(SIGUSR1, my_handler);
+
     while (1)
     {
         pause();

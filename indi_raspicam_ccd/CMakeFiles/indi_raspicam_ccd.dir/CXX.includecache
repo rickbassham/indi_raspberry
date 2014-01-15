@@ -23,6 +23,10 @@ unistd.h
 -
 indiccd.h
 -
+jpeglib.h
+-
+fitsio.h
+-
 
 /usr/include/libindi/basedevice.h
 vector

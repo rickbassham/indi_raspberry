@@ -198,6 +198,9 @@ LIBRARY_OUTPUT_PATH:PATH=
 //pkg-config executable
 PKG_CONFIG_EXECUTABLE:FILEPATH=/usr/bin/pkg-config
 
+//Path to a program.
+RASPISTILL_EXECUTABLE:FILEPATH=RASPISTILL_EXECUTABLE-NOTFOUND
+
 //Path to a file.
 ZLIB_INCLUDE_DIR:PATH=/usr/include
 
